@@ -11,22 +11,22 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/v-jet.net_test/',
     name: 'home',
     component: Home
   },
   {
-    path: '/movies_sessions',
+    path: '/v-jet.net_test/movies_sessions',
     name: 'movies_sessions',
     component: MoviesSessions
   },
   {
-    path: '/film/:id',
+    path: '/v-jet.net_test/film/:id',
     name: 'film',
     component: Film
   },
   {
-    path: '/film_search',
+    path: '/v-jet.net_test/film_search',
     name: 'film_search',
     component: FilmSearch,
   }

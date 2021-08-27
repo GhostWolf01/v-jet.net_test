@@ -39,7 +39,6 @@ export default {
       urlPrams.push(`genres=${this.$route.query.genre}`)
       }
       const response = await this.$http.get(`/movies?${urlPrams.join('&')}`)
-      console.log(response.data)
       if (response.data){
         this.data = response.data.data
       }
