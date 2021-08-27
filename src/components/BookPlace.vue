@@ -194,7 +194,7 @@ export default {
           movie_id: this.data.id,
           row: this.rowsItem,
           seat: this.seatsItem,
-          Showdate: this.showDateItem,
+          showdate: this.showDateItem,
           daytime: this.dayTimeItem
         })
         if (response.data) {
