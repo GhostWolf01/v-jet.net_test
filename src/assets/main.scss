@@ -1,0 +1,21 @@
+@import '~vuetify/src/styles/styles.sass';
+
+:root{
+  @each $name, $item in $colors {
+    @each $name-item, $color in $item {
+      --#{$name}-#{$name-item}: #{$color}
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html{
+  overflow: hidden;
+}
+
+.v-application p{
+  margin: 0 !important;
+}

@@ -1,53 +1,52 @@
 <template>
-  <div class="home">
-    <Movies v-for="item in getMoviesData"
+  <div class="movies-sessions">
+    <MovieSessions v-for="item in getMoviesData"
       :key="item.id"
       :item="item"
     />
-    <div class="home__scroll"></div>
   </div>
 </template>
 
 <script>
-import Movies from '../components/Movies.vue'
 import { mapActions, mapGetters } from 'vuex'
+import MovieSessions from '../components/MovieSessions.vue'
 
 export default {
-  name: 'Home',
+  name: 'MoviesSessions',
   components: {
-    Movies
+    MovieSessions
   },
   data() {
     return {
-      loading: false
+      data: []
     }
   },
   computed: {
     ...mapGetters({
-      getMoviesData: 'getMoviesData',
+      getMoviesData: 'getMoviesData'
     })
   },
   async created() {
-    await this.loadMoviesData()
+    await this.loadMovieShowsData()
+    if(!this.getMoviesData){
+      await this.loadMoviesData()
+    }
   },
   methods: {
     ...mapActions({
+      loadMovieShowsData: 'loadMovieShowsData',
       loadMoviesData: 'loadMoviesData'
     })
-  }
+  },
 }
 </script>
 
 <style lang="scss">
-.home{
+.movies-sessions{
   width: 100%;
   height: 100%;
   padding: 40px;
   background-color: var(--grey-darken-4);
   overflow: auto;
-  &__scroll{
-    height: 1px;
-    width: 100%;
-  }
 }
 </style>
